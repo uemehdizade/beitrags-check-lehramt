@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DU-Beitragscheck Lehramt</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1b3d;--mut:#5b6685;--bg:#f2f5fc;--bay:#1f5eff;--bay2:#e6edff;--dbv:#00a878;--dbv2:#dcf6ee;--si:#e11d48;--si2:#ffe4ea;--gold:#ffb703}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+.hero{position:relative;overflow:hidden;color:#fff;padding:54px 22px 120px;background:radial-gradient(1100px 520px at 90% -10%,#3b82ff66,transparent 60%),radial-gradient(900px 500px at 0% 110%,#00d4a066,transparent 60%),radial-gradient(600px 300px at 55% 120%,#e11d4855,transparent 60%),linear-gradient(135deg,#0a1233,#13276a 60%,#1a3a8f)}
+.wrap{max-width:1080px;margin:0 auto;position:relative}
+.tag{display:inline-block;background:#ffffff1f;border:1px solid #ffffff40;padding:6px 14px;border-radius:99px;font-size:12.5px;font-weight:700;letter-spacing:.6px}
+h1{font-family:Fraunces,serif;font-size:clamp(32px,5.4vw,60px);line-height:1.06;margin:16px 0 12px;font-weight:800;max-width:780px}
+h1 em{font-style:normal;background:linear-gradient(90deg,#8bb6ff,#5ef2c4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;color:#d5defa;font-size:17px}
+.deco{position:absolute;right:-30px;top:10px;width:430px;opacity:.95}
+@media(max-width:900px){.deco{display:none}}
+main{margin-top:-80px;padding:0 18px 60px}
+.card{background:#fff;border-radius:24px;box-shadow:0 20px 55px #0f1b3d22;padding:26px;margin-bottom:24px}
+.form{display:grid;grid-template-columns:1.4fr 1fr auto;gap:16px;align-items:end}
+@media(max-width:780px){.form{grid-template-columns:1fr}}
+label{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--mut);display:block;margin-bottom:6px}
+select,input{width:100%;font:600 16px Inter;padding:14px 16px;border-radius:14px;border:2px solid #dfe5f4;background:#fafbff;color:var(--ink);outline:none}
+select:focus,input:focus{border-color:var(--bay);background:#fff}
+button.go{font:700 16px Inter;padding:15px 26px;border:0;border-radius:14px;color:#fff;cursor:pointer;background:linear-gradient(135deg,#1f5eff,#5b3bff);box-shadow:0 10px 24px #1f5eff55}
+.hint{font-size:12.5px;color:var(--mut);margin-top:10px}
+.err{display:none;margin-top:14px;background:#fff3cf;color:#6b4a00;border-radius:12px;padding:12px 14px;font-weight:600;font-size:14px}
+#res{display:none}
+.top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.pill{background:#eef1fa;border-radius:99px;padding:7px 14px;font-size:13px;font-weight:600}
+.pill b{color:var(--bay)}
+.blocks{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.blocks{grid-template-columns:1fr}}
+.block h2{font-family:Fraunces,serif;font-size:22px;margin-bottom:12px}
+.prov{border-radius:18px;padding:14px 16px;margin-bottom:12px;border:2px solid transparent;position:relative}
+.prov.bay{background:var(--bay2)}.prov.dbv{background:var(--dbv2)}.prov.si{background:var(--si2)}
+.prov.win{border-color:var(--gold);box-shadow:0 10px 26px #ffb70355}
+.prov .n{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:var(--mut)}
+.prov .v{font-family:Fraunces,serif;font-size:34px;font-weight:800;line-height:1.1;margin-top:2px}
+.prov .v small{font-family:Inter;font-size:13px;font-weight:500;color:var(--mut)}
+.bar{height:8px;border-radius:9px;background:#0f1b3d14;margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:9px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.bay .bar i{background:var(--bay)}.dbv .bar i{background:var(--dbv)}.si .bar i{background:var(--si)}
+.crown{font-size:11px;font-weight:800;background:var(--gold);color:#3b2a00;padding:3px 10px;border-radius:99px}
+.na{color:var(--mut);font-weight:500;font-size:14px;padding:8px 0}
+.diff{margin-top:6px;font-size:13px;color:var(--mut)}
+.foot{font-size:12.5px;color:var(--mut);margin-top:16px;line-height:1.5}
+details{margin-top:6px}summary{cursor:pointer;font-weight:700;font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+th,td{padding:7px 8px;text-align:right;border-bottom:1px solid #e6eaf5}th:first-child,td:first-child{text-align:left}
+td.min{font-weight:800;background:#fff3cf}
+.stand{display:inline-flex;gap:8px;background:#fff3cf;color:#6b4a00;border-radius:99px;padding:6px 14px;font-weight:700;font-size:13px;margin-top:20px}
+</style>
+</head>
+<body>
+<header class="hero">
+<svg class="deco" viewBox="0 0 430 300" fill="none" aria-hidden="true">
+<rect x="30" y="150" width="370" height="125" rx="18" fill="#ffffff14" stroke="#ffffff40"/>
+<path d="M55 150 L215 62 L375 150Z" fill="#ffffff22" stroke="#ffffff55"/>
+<rect x="195" y="190" width="42" height="85" rx="7" fill="#5ef2c466"/>
+<rect x="70" y="180" width="62" height="52" rx="7" fill="#8bb6ff66"/><rect x="298" y="180" width="62" height="52" rx="7" fill="#8bb6ff66"/>
+<circle cx="215" cy="104" r="15" fill="#ffb703"/><circle cx="350" cy="46" r="24" fill="#ffffff1c"/><circle cx="388" cy="88" r="10" fill="#e11d4888"/>
+<path d="M36 64 q44 -42 88 0" stroke="#ffffff66" stroke-width="3" fill="none"/>
+</svg>
+<div class="wrap">
+<span class="tag">DIENSTUNFÄHIGKEIT · LEHRAMT</span>
+<h1>Beitrags-<em>Check</em> für Lehrkräfte &amp; Anwärter</h1>
+<p>Berufsgruppe und Geburtsdatum eingeben – sofort sehen, wie sich die Beiträge von Bayerische, DBV und Signal Iduna bei BU mit DU-Klausel und Teil-DU unterscheiden.</p>
+<span class="stand" id="stand">Stand: …</span>
+</div>
+</header>
+<main><div class="wrap">
+<section class="card">
+<div class="form">
+<div><label for="grp">Berufsgruppe</label><select id="grp"></select></div>
+<div><label for="dob">Geburtsdatum</label><input id="dob" type="date" min="1960-01-01"></div>
+<button class="go" id="go">Beiträge anzeigen</button>
+</div>
+<p class="hint">Das Geburtsdatum wird nur im Browser zur Altersberechnung genutzt und nirgendwohin übertragen. Das Geschlecht spielt bei der BU keine Rolle für den Beitrag.</p>
+<div class="err" id="err"></div>
+</section>
+<section class="card" id="res">
+<div class="top"><span class="pill" id="p1"></span><span class="pill" id="p2"></span></div>
+<div class="blocks">
+<div class="block"><h2>BU mit DU-Klausel</h2><div id="b-du"></div></div>
+<div class="block"><h2>Teil-DU</h2><div id="b-teil"></div></div>
+</div>
+<details><summary>Alle Alter dieser Berufsgruppe anzeigen</summary><div id="tbl"></div></details>
+<p class="foot" id="foot"></p>
+</section>
+</div></main>
+<script>
+const NAMES={bay:"Die Bayerische",dbv:"DBV",si:"Signal Iduna"};
+const f=n=>n==null?"–":n.toFixed(2).replace(".",",")+" €";
+let D=null;
+function ageFrom(s){const b=new Date(s),t=new Date();let a=t.getFullYear()-b.getFullYear();const m=t.getMonth()-b.getMonth();if(m<0||(m===0&&t.getDate()<b.getDate()))a--;return a}
+function block(el,vals,max){const av=vals.filter(x=>x!=null);const min=av.length>1?Math.min(...av):null;
+ el.innerHTML=["bay","dbv","si"].map((c,i)=>{const v=vals[i];if(v==null)return `<div class="prov ${c}"><div class="n">${NAMES[c]}</div><div class="na">in Check24 für diese Kombination nicht gelistet</div></div>`;
+ const win=min!=null&&v===min;return `<div class="prov ${c} ${win?"win":""}"><div class="n"><span>${NAMES[c]}</span>${win?'<span class="crown">👑 niedrigster Beitrag</span>':""}</div><div class="v">${f(v).replace(" €","")} <small>€ / Monat</small></div><div class="bar"><i data-w="${Math.round(v/max*100)}"></i></div></div>`}).join("")+(av.length>1?`<div class="diff">Spanne zwischen niedrigstem und höchstem Beitrag: <b>${f(Math.max(...av)-Math.min(...av))}</b></div>`:"");
+ requestAnimationFrame(()=>requestAnimationFrame(()=>el.querySelectorAll(".bar i").forEach(i=>i.style.width=i.dataset.w+"%")))}
+function show(){
+ const g=D.groups.find(x=>x.id===document.getElementById("grp").value);const dob=document.getElementById("dob").value;const err=document.getElementById("err");
+ err.style.display="none";
+ if(!dob){err.textContent="Bitte ein Geburtsdatum eingeben.";err.style.display="block";return}
+ const age=ageFrom(dob);const row=g.ages[age];
+ if(!row){err.textContent=`Für „${g.name}“ sind Beiträge für ${g.min} bis ${g.max} Jahre hinterlegt. Alter ${age} liegt außerhalb.`;err.style.display="block";document.getElementById("res").style.display="none";return}
+ document.getElementById("res").style.display="block";
+ document.getElementById("p1").innerHTML=`<b>${g.name}</b> · ${g.sub}`;document.getElementById("p2").innerHTML=`Alter <b>${age}</b> Jahre`;
+ const all=[...row.du,...row.teil].filter(x=>x!=null);const max=Math.max(...all)*1.05;
+ block(document.getElementById("b-du"),row.du,max);block(document.getElementById("b-teil"),row.teil,max);
+ let t=`<table><tr><th>Alter</th><th>Bayerische DU</th><th>DBV DU</th><th>SI DU</th><th>Bayerische Teil</th><th>DBV Teil</th><th>SI Teil</th></tr>`;
+ for(let a=g.min;a<=g.max;a++){const r=g.ages[a];if(!r)continue;const cell=(arr,i)=>{const av=arr.filter(x=>x!=null);const m=av.length>1?Math.min(...av):null;return `<td class="${m!=null&&arr[i]===m?"min":""}">${f(arr[i])}</td>`};
+ t+=`<tr ${a===age?'style="background:#eef3ff"':''}><td>${a}</td>${[0,1,2].map(i=>cell(r.du,i)).join("")}${[0,1,2].map(i=>cell(r.teil,i)).join("")}</tr>`}
+ document.getElementById("tbl").innerHTML=t+"</table>";
+ document.getElementById("foot").innerHTML=`Quelle: Check24 Berufsunfähigkeits-Vergleich, Stand ${D.stand}. Rahmen: ${D.rahmen}. Tarife: Bayerische „BU PROTECT NR“ / „Teil DU NR“, DBV „ALVSDV Allg. DU NR“ / „Teil-DU NR“, Signal Iduna „WorkLife EXKLUSIV-PLUS DU“ / „Teil-DU“. Der tatsächliche Beitrag hängt vom Alter bei Vertragsbeginn, Gesundheitsprüfung, Rente und Laufzeit ab. Reine Beitragswerte, keine Beratung oder Empfehlung; Leistungsunterschiede der Tarife werden im persönlichen Gespräch geklärt.`}
+fetch("data.json").then(r=>r.json()).then(d=>{D=d;document.getElementById("stand").textContent="Stand: "+d.stand;
+ const s=document.getElementById("grp");s.innerHTML=d.groups.map(g=>`<option value="${g.id}">${g.name}</option>`).join("");
+ document.getElementById("go").onclick=show;document.getElementById("dob").addEventListener("keydown",e=>{if(e.key==="Enter")show()});
+}).catch(()=>{document.getElementById("err").textContent="Daten konnten nicht geladen werden.";document.getElementById("err").style.display="block"});
+</script>
+</body>
+</html>
